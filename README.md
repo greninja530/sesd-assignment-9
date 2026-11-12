@@ -29,4 +29,4 @@ Version control let the static baseline remain available while features were dev
 
 ## Deploy
 
-The site is static and can be hosted on GitHub Pages. Push this repository to GitHub, enable **Settings → Pages → GitHub Actions**, and push to `main`; the included workflow publishes the site. Until it is pushed to a GitHub repository, the app is deployment-ready but has no public URL.
+The site is static and can be hosted on GitHub Pages. The source and development branches are published at <https://github.com/greninja530/sesd-assignment-9>. In the repository, enable **Settings → Pages → GitHub Actions**; the included workflow publishes the site on pushes to `main` and can also be started manually. A live Pages URL is not available until that workflow completes successfully.

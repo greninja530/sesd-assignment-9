@@ -16,4 +16,4 @@ Development was organized into `version-1`, `version-2`, and `testing` branches.
 
 ## Deployment
 
-The finished static site includes a GitHub Actions workflow for GitHub Pages. To publish it, push the repository to GitHub and enable **Settings → Pages → GitHub Actions**. It has not yet been published to a live URL because no GitHub remote/repository was provided.
+The source and all development branches are published at <https://github.com/greninja530/sesd-assignment-9>. The repository includes a GitHub Actions workflow for GitHub Pages. At the time of this report, GitHub has not run the workflow and the Pages URL is not live. Enable **Settings → Pages → GitHub Actions** in the repository to allow the workflow to publish the site.
