@@ -6,10 +6,8 @@
     <meta name="theme-color" content="#f5f2eb">
     <meta name="description" content="A small, thoughtful space for notes and stories.">
     <title>Fieldnotes — a little blog</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="module" src="src/app.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -31,28 +29,27 @@
       <section class="posts-section" aria-labelledby="latest-title">
         <div class="section-heading">
           <h2 id="latest-title">Latest entries</h2>
-          <span class="post-count">03 NOTES</span>
+          <span class="post-count" id="post-count" aria-live="polite"></span>
         </div>
-        <div class="post-list">
-          <article class="post-card">
-            <div class="post-meta"><time datetime="2025-03-14">MARCH 14, 2025</time><span class="post-dot" aria-hidden="true"></span><span>REFLECTIONS</span></div>
-            <h3>The quiet art of beginning again</h3>
-            <p class="post-excerpt">Some mornings arrive like a fresh sheet of paper. No grand plan, no perfect first line — just the gentle permission to begin where you are.</p>
-            <span class="read-time">4 MIN READ</span>
-          </article>
-          <article class="post-card">
-            <div class="post-meta"><time datetime="2025-03-08">MARCH 08, 2025</time><span class="post-dot" aria-hidden="true"></span><span>ON SLOW LIVING</span></div>
-            <h3>A walk without a destination</h3>
-            <p class="post-excerpt">I left the house without headphones or a route. The neighborhood, it turns out, has been telling stories the whole time.</p>
-            <span class="read-time">3 MIN READ</span>
-          </article>
-          <article class="post-card">
-            <div class="post-meta"><time datetime="2025-02-26">FEBRUARY 26, 2025</time><span class="post-dot" aria-hidden="true"></span><span>COLLECTED THINGS</span></div>
-            <h3>Notes from the windowsill</h3>
-            <p class="post-excerpt">A leaning stack of books, a stubborn basil plant, and the afternoon light making ordinary things feel like they belong in a still life.</p>
-            <span class="read-time">2 MIN READ</span>
-          </article>
-        </div>
+        <div class="post-list" id="post-list" aria-live="polite"></div>
+      </section>
+
+      <section class="editor-section" aria-labelledby="editor-title">
+        <p class="eyebrow">YOUR SPACE</p>
+        <h2 id="editor-title">Leave a note.</h2>
+        <p class="editor-copy">Write in Markdown. Your notes stay in this browser session.</p>
+        <form id="post-form" class="post-form">
+          <label for="post-title">Title</label>
+          <input id="post-title" name="title" type="text" maxlength="100" placeholder="A thought worth keeping" required>
+          <label for="post-content">Your note <span>Markdown supported</span></label>
+          <textarea id="post-content" name="content" rows="7" placeholder="A few lines, a small story, a list..." required></textarea>
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+          <div class="form-actions">
+            <button type="button" class="button button-quiet" id="cancel-edit" hidden>Cancel edit</button>
+            <button type="submit" class="button button-primary" id="submit-post">Add note <span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+        <p class="privacy-note">Notes are kept in memory and disappear when you refresh the page.</p>
       </section>
     </main>
 
